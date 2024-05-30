@@ -1,23 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
-  let attempts = 5;
+  let randomNumber = Math.floor(Math.random() * 100) + 1;
+  let attempts = 3;
 
-  const guessInput = document.getElementById("guessInput");
-  const guessButton = document.getElementById("guessButton");
-  const message = document.getElementById("message");
-  const attemptsDisplay = document.getElementById("attempts");
+  let guessInput = document.getElementById("guessInput");
+  let guessButton = document.getElementById("guessButton");
+  let message = document.getElementById("message");
+  let attemptsDisplay = document.getElementById("attempts");
 
   attemptsDisplay.textContent = `Attempts left: ${attempts}`;
 
+  guessInput.addEventListener("input", (event) => {
+    let value = event.target.value;
+    if (!/^\d*$/.test(value)) {
+      alert("You can only enter whole numbers.");
+      guessInput.value = value.replace(/[^0-9]/g, "");
+    }
+  });
+
   guessButton.addEventListener("click", () => {
-    const userGuess = parseInt(guessInput.value);
+    let userGuess = parseInt(guessInput.value);
 
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
       message.textContent = "Please enter a valid number between 1 and 100.";
 
       return;
     }
-
     attempts--;
 
     if (userGuess === randomNumber) {

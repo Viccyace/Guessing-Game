@@ -4,24 +4,13 @@
   box-sizing: border-box;
 }
 
-.transition {
-  transition: all 3s ease;
-}
-
 .main {
+  background: url(images/guess-bg2.jpg) no-repeat center center/cover;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 .container {
@@ -59,7 +48,7 @@ p {
   width: 100%;
 }
 
-input[type="number"] {
+input[type="text"] {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
