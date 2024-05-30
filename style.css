@@ -101,7 +101,7 @@ button:hover {
     width: 50%;
   }
 
-  input[type="number"]::placeholder {
+  input[type="text"]::placeholder {
     text-align: center;
   }
 
